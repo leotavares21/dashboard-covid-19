@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .chart-container {
+    @apply h-screen max-h-72 p-3 bg-gray-50 dark:bg-gray-900 shadow rounded;
+  }
+  .chart-title {
+    @apply text-pink-600 font-semibold;
+  }
+}
+@tailwind utilities;
+
