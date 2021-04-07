@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { ResponsiveChoroplethCanvas } from '@nivo/geo'
+import { connect } from 'react-redux'
 import * as d3 from 'd3'
 
-const ChartChoropleth = () => {
+const ChartChoropleth = ({ theme }) => {
   const [geoFeatures, setGeoFeatures] = useState([])
   useEffect(() => {
     getFeatures()
   }, [])
+
+  useEffect(() => {}, [theme])
+
   const [data, setData] = useState([
     {
       id: 'AFG',
@@ -699,13 +703,14 @@ const ChartChoropleth = () => {
   ])
 
   const getFeatures = async () => {
-   await d3.json(
-      'https://raw.githubusercontent.com/plouc/nivo/master/website/src/data/components/geo/world_countries.json'
-    ).then(function (data) {
-      setGeoFeatures(data.features)
-    })
+    await d3
+      .json(
+        'https://raw.githubusercontent.com/plouc/nivo/master/website/src/data/components/geo/world_countries.json'
+      )
+      .then(function (data) {
+        setGeoFeatures(data.features)
+      })
   }
-
 
   return (
     <section className="chart-container">
@@ -731,7 +736,9 @@ const ChartChoropleth = () => {
             justify: true,
             translateX: 20,
             translateY: -60,
-            itemTextColor: '#fafafa',
+            itemTextColor: `${
+              localStorage.theme === '1' ? '#fafafa' : '#333333'
+            }`,
             itemsSpacing: 0,
             itemWidth: 92,
             itemHeight: 18,
@@ -741,9 +748,12 @@ const ChartChoropleth = () => {
           },
         ]}
       />
-
     </section>
   )
 }
 
-export default ChartChoropleth
+const mapStateToProps = state => ({
+  theme: state.topbarReducer.theme,
+})
+
+export default connect(mapStateToProps)(ChartChoropleth)

@@ -3,7 +3,7 @@
     "es2021": true,
     "browser": true,
     "node": true,
-    "jest": true
+    "cypress": true
   },
   "extends": [
     "plugin:react/recommended",

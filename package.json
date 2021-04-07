@@ -2,14 +2,11 @@
   "name": "dashboard-covid-19",
   "version": "0.1.0",
   "private": true,
-  "author": {
-    "name": "Leonardo Tavares"
-  },
-  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
     "@nivo/bar": "^0.67.0",
@@ -21,7 +18,9 @@
     "axios": "^0.21.1",
     "d3": "^6.6.1",
     "next": "10.0.9",
+    "next-redux-wrapper": "^6.0.2",
     "react": "17.0.1",
+    "react-collapsible": "^2.8.3",
     "react-dom": "17.0.1",
     "react-redux": "^7.2.3",
     "redux": "^4.0.5",
@@ -30,6 +29,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "cypress": "^6.8.0",
     "eslint": "7.12.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-standard": "^16.0.2",
@@ -39,6 +39,9 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.23.1",
     "postcss": "^8.2.8",
-    "prettier": "^2.2.1"
-  }
+    "prettier": "^2.2.1",
+    "redux-devtools-extension": "^2.13.9"
+  },
+  "author": "Leonardo Tavares",
+  "license": "MIT"
 }
