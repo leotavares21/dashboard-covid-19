@@ -1,62 +1,114 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { ResponsiveBullet } from '@nivo/bullet'
+import { bindActionCreators } from 'redux'
+import { ResponsiveBar } from '@nivo/bar'
+import * as ChartBarActions from '../../store/actions/chartBar'
 
-const ChartBullet = ({ theme }) => {
+const ChartBullet = ({ theme, data }) => {
   useEffect(() => {}, [theme])
-
-  const [data, setData] = useState([
-    {
-      id: 'temp.',
-      ranges: [37, 25, 69, 0, 120],
-      measures: [79],
-      markers: [97],
-    },
-    {
-      id: 'power',
-      ranges: [
-        0.8499024850025595,
-        1.0954692901603307,
-        0.39008361057583896,
-        0,
-        2,
-      ],
-      measures: [0.608952549863467, 1.2876472421112108],
-      markers: [1.7698095722444662],
-    },
-    {
-      id: 'volume',
-      ranges: [4, 51, 8, 25, 13, 36, 0, 60],
-      measures: [37],
-      markers: [39],
-    },
-    {
-      id: 'cost',
-      ranges: [148536, 205833, 241972, 0, 500000],
-      measures: [80282, 433382],
-      markers: [301721],
-    },
-    {
-      id: 'revenue',
-      ranges: [4, 0, 11, 0, 11],
-      measures: [3],
-      markers: [8.280260380534585, 8.11132950340028],
-    },
-  ])
 
   return (
     <section className="chart-container">
       <h2 className="chart-title">Lorem ipsum 2010</h2>
-      <ResponsiveBullet
+      <ResponsiveBar
         data={data}
-        margin={{ top: 50, right: 90, bottom: 50, left: 90 }}
-        spacing={35}
-        titleAlign="start"
-        titleOffsetX={-70}
-        markerSize={1.15}
-        rangeColors="red_purple"
-        measureColors="spectral"
-        markerColors="nivo"
+        keys={['ativos', 'confirmados', 'curados']}
+        indexBy="estados"
+        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        padding={0.3}
+        layout="horizontal"
+        valueScale={{ type: 'linear' }}
+        indexScale={{ type: 'band', round: true }}
+        colors={{ scheme: 'pink_yellowGreen' }}
+        defs={[
+          {
+            id: 'dots',
+            type: 'patternDots',
+            background: 'inherit',
+            size: 4,
+            padding: 1,
+            stagger: true,
+          },
+          {
+            id: 'lines',
+            type: 'patternLines',
+            background: 'inherit',
+            rotation: -45,
+            lineWidth: 6,
+            spacing: 10,
+          },
+        ]}
+        fill={[
+          {
+            match: {
+              id: 'curados',
+            },
+            id: 'lines',
+          },
+          {
+            match: {
+              id: 'confirmados',
+            },
+            id: 'dots',
+          },
+          {
+            match: {
+              id: 'ativos',
+            },
+            id: 'lines',
+          },
+        ]}
+        borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+        axisTop={null}
+        axisRight={null}
+        axisBottom={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: 'vacinados',
+          legendPosition: 'middle',
+          legendOffset: 32,
+        }}
+        axisLeft={{
+          tickSize: 0,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: 'países',
+          legendPosition: 'middle',
+          legendOffset: -57,
+        }}
+        labelSkipWidth={12}
+        labelSkipHeight={12}
+        labelTextColor={localStorage.theme === '1' ? '#fafafa' : '#000000'}
+        legends={[
+          {
+            anchor: 'bottom-right',
+            direction: 'column',
+            justify: false,
+            translateX: 100,
+            translateY: 0,
+            itemsSpacing: 0,
+            itemDirection: 'left-to-right',
+            itemWidth: 80,
+            itemHeight: 20,
+            itemOpacity: 0.75,
+            symbolSize: 12,
+            symbolShape: 'circle',
+            effects: [
+              {
+                on: 'hover',
+                style: {
+                  itemBackground: `${
+                    localStorage.theme === '1'
+                      ? 'rgba(39, 50, 74, .5)'
+                      : 'rgba(234, 234, 234, .9)'
+                  }`,
+                  itemOpacity: 1,
+                },
+              },
+            ],
+          },
+        ]}
         theme={{
           textColor: `${localStorage.theme === '1' ? '#fafafa' : '#333333'}`,
           axis: {
@@ -82,12 +134,17 @@ const ChartBullet = ({ theme }) => {
             },
           },
         }}
+        animate={true}
+        motionStiffness={90}
+        motionDamping={15}
       />
     </section>
   )
 }
+
 const mapStateToProps = state => ({
   theme: state.topbarReducer.theme,
+  data: state.chartBarReducer.data,
 })
 
 export default connect(mapStateToProps)(ChartBullet)

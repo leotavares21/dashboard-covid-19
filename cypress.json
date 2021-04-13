@@ -1,1 +1,4 @@
-
+{
+    "baseUrl": "https://covid-193.p.rapidapi.com/",
+    "video": false
+}

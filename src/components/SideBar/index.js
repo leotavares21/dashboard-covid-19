@@ -6,7 +6,7 @@ const SideBar = props => {
     <nav
       className={`bg-pink-600 text-gray-50 dark:bg-gray-900 pb-2 lg:min-h-full lg:block ${
         props.open ? 'block' : 'hidden'
-      }  transition-all duration-300`}
+      }`}
     >
       <div className="flex justify-between">
         <a href="/" className="pl-3 py-2 flex">
@@ -35,8 +35,8 @@ const SideBar = props => {
         className={`${
           props.open
             ? 'lg:absolute lg:left-0 lg:transform lg:-translate-x-full lg:opacity-0'
-            : 'lg:opacity-1 lg:delay-200'
-        } Collapsible-container transition duration-200 ease-out border-t border-pink-700 px-3 pt-1`}
+            : 'lg:opacity-1 transition duration-200 ease-out lg:delay-200 '
+        } Collapsible-container border-t border-pink-700 px-3 pt-1`}
       >
         <span className="text-pink-200 dark:text-pink-600 font-light">Main</span>
         <Collapsible

@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 
 import SideBar from '../components/SideBar'
 import TopBar from '../components/TopBar'
-import ChartPie from '../components/ChartPie'
+import ChartPieBR from '../components/ChartPieBR'
+import ChartPieUSA from '../components/ChartPieUSA'
 import ChartLine from '../components/ChartLine'
 import ChartChoropleth from '../components/ChartChoropleth'
 import ChartBar from '../components/ChartBar'
@@ -14,7 +15,7 @@ const Home = ({ open }) => {
       <header
         className={`${
           open ? 'lg:w-0' : 'lg:w-1/6'
-        } transition-all duration-200 ease-out`}
+        } `}
       >
         <SideBar open={open} />
       </header>
@@ -22,16 +23,16 @@ const Home = ({ open }) => {
       <div
         className={`${
           open ? 'lg:w-full' : 'lg:w-5/6'
-        } mb-0.5 transition-width duration-200 ease-out`}
+        } mb-0.5`}
       >
         <TopBar />
 
         <main className="grid grid-cols-1 lg:grid-cols-4 gap-3 m-2.5">
           <div className="xl:col-span-1 lg:col-span-2">
-            <ChartPie />
+            <ChartPieBR />
           </div>
           <div className="xl:col-span-1 lg:col-span-2">
-            <ChartPie />
+            <ChartPieUSA />
           </div>
           <div className="xl:col-span-2 lg:col-span-4">
             <ChartLine />
