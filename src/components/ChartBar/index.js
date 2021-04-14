@@ -11,7 +11,7 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
 
   return (
     <section className="chart-container">
-      <h2 className="chart-title">Dados da COVID-19 por estados brasileiros</h2>
+      <h2 className="chart-title">Dados de COVID-19 por estados brasileiros</h2>
       <ResponsiveBar
         data={data}
         keys={['ativos', 'confirmados', 'curados']}
@@ -21,6 +21,8 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={{ scheme: 'pink_yellowGreen' }}
+        labelFormat="> .3s"
+        tooltipFormat="> .3s"
         defs={[
           {
             id: 'dots',
@@ -52,12 +54,6 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
             },
             id: 'dots',
           },
-          {
-            match: {
-              id: 'ativos',
-            },
-            id: 'lines',
-          },
         ]}
         borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
         axisTop={null}
@@ -80,7 +76,7 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
-        labelTextColor={localStorage.theme === '1' ? '#fafafa' : '#000000'}
+        labelTextColor='#fafafa'
         legends={[
           {
             anchor: 'bottom-right',

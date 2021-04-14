@@ -2,24 +2,28 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { ResponsiveBar } from '@nivo/bar'
-import * as ChartBarActions from '../../store/actions/chartBar'
+import * as ChartBulletActions from '../../store/actions/chartBullet'
 
-const ChartBullet = ({ theme, data }) => {
-  useEffect(() => {}, [theme])
+const ChartBullet = ({ theme, data, fetchChartBulletRequest }) => {
+  useEffect(() => {
+    fetchChartBulletRequest()
+  }, [theme])
 
   return (
     <section className="chart-container">
-      <h2 className="chart-title">Lorem ipsum 2010</h2>
+      <h2 className="chart-title">Taxa de infecção e fatalidade de COVID-19</h2>
       <ResponsiveBar
         data={data}
-        keys={['ativos', 'confirmados', 'curados']}
-        indexBy="estados"
+        keys={['infecção', 'fatalidade']}
+        indexBy="países"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
         layout="horizontal"
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={{ scheme: 'pink_yellowGreen' }}
+        enableGridX={true}
+        enableGridY={false}
         defs={[
           {
             id: 'dots',
@@ -29,33 +33,13 @@ const ChartBullet = ({ theme, data }) => {
             padding: 1,
             stagger: true,
           },
-          {
-            id: 'lines',
-            type: 'patternLines',
-            background: 'inherit',
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10,
-          },
         ]}
         fill={[
           {
             match: {
-              id: 'curados',
-            },
-            id: 'lines',
-          },
-          {
-            match: {
-              id: 'confirmados',
+              id: 'fatalidade',
             },
             id: 'dots',
-          },
-          {
-            match: {
-              id: 'ativos',
-            },
-            id: 'lines',
           },
         ]}
         borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
@@ -65,7 +49,7 @@ const ChartBullet = ({ theme, data }) => {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: 'vacinados',
+          legend: 'taxa',
           legendPosition: 'middle',
           legendOffset: 32,
         }}
@@ -75,11 +59,11 @@ const ChartBullet = ({ theme, data }) => {
           tickRotation: 0,
           legend: 'países',
           legendPosition: 'middle',
-          legendOffset: -57,
+          legendOffset: -52,
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
-        labelTextColor={localStorage.theme === '1' ? '#fafafa' : '#000000'}
+        labelTextColor='#fafafa'
         legends={[
           {
             anchor: 'bottom-right',
@@ -144,7 +128,10 @@ const ChartBullet = ({ theme, data }) => {
 
 const mapStateToProps = state => ({
   theme: state.topbarReducer.theme,
-  data: state.chartBarReducer.data,
+  data: state.chartBulletReducer.data,
 })
 
-export default connect(mapStateToProps)(ChartBullet)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(ChartBulletActions, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChartBullet)

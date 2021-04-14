@@ -5,6 +5,7 @@ import { watchFetchChartPieUSA } from './chartPieUSA'
 import { watchFetchChartLine } from './chartLine'
 import { watchFetchChartChoropleth } from './chartChoropleth'
 import { watchFetchChartBar } from './chartBar'
+import { watchFetchChartBullet } from './chartBullet'
 
 function* rootSaga() {
   yield all([
@@ -13,6 +14,7 @@ function* rootSaga() {
     watchFetchChartLine(),
     watchFetchChartChoropleth(),
     watchFetchChartBar(),
+    watchFetchChartBullet(),
   ])
 }
 

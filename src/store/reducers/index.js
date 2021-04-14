@@ -5,6 +5,7 @@ import chartPieUSAReducer from './chartPieUSA'
 import chartLineReducer from './chartLine'
 import chartChoroplethReducer from './chartChoropleth'
 import chartBarReducer from './chartBar'
+import chartBulletReducer from './chartBullet'
 
 export default combineReducers({
   topbarReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   chartLineReducer,
   chartChoroplethReducer,
   chartBarReducer,
+  chartBulletReducer,
 })

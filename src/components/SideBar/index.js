@@ -46,39 +46,39 @@ const SideBar = props => {
         >
           <ul className="py-1" cy-selector="sideBarSubNav">
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Statistics
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Cases
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Regions
             </li>
           </ul>
         </Collapsible>
         <Collapsible trigger="Forms" transitionTime="200" easing="ease-in-out">
           <ul className="py-1" cy-selector="sideBarSubNav">
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Datas
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Users
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Registers
             </li>
           </ul>
         </Collapsible>
         <Collapsible trigger="Tables" transitionTime="200" easing="ease-in-out">
           <ul className="py-1" cy-selector="sideBarSubNav">
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Patients
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Doctors
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Hospitals
             </li>
           </ul>
         </Collapsible>
@@ -88,39 +88,42 @@ const SideBar = props => {
         <Collapsible trigger="Charts" transitionTime="200" easing="ease-in-out">
           <ul className="py-1" cy-selector="sideBarSubNav">
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Vaccines
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Rates
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Validations
             </li>
           </ul>
         </Collapsible>
         <Collapsible trigger="Maps" transitionTime="200" easing="ease-in-out">
           <ul className="py-1" cy-selector="sideBarSubNav">
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Google
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
-            </li>
-            <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Microsoft
             </li>
           </ul>
         </Collapsible>
         <Collapsible trigger="Pages" transitionTime="200" easing="ease-in-out">
           <ul className="py-1" cy-selector="sideBarSubNav">
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Pricing
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Settings
             </li>
             <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
-              lorem ipsum
+              Tasks
+            </li>
+            <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
+              Alerts
+            </li>
+            <li className="pl-6 pr-1 hover:text-pink-900 cursor-pointer">
+              Notifications
             </li>
           </ul>
         </Collapsible>

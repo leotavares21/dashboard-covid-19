@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <meta name="description" content="Dashboard with Next.js" />
-          <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
         </Head>
 
         <body className="bg-gray-200 dark:bg-gray-800">

@@ -37,36 +37,36 @@
   .Collapsible-container
     > .Collapsible:nth-of-type(1)
     > .Collapsible__trigger::before {
-    background-image: url('/home.svg');
+    background-image: url('../assets/home.svg');
   }
   .Collapsible-container
     > .Collapsible:nth-of-type(2)
     > .Collapsible__trigger::before {
-    background-image: url('/forms.svg');
+    background-image: url('../assets/forms.svg');
   }
   .Collapsible-container
     > .Collapsible:nth-of-type(3)
     > .Collapsible__trigger::before {
-    background-image: url('/table.svg');
+    background-image: url('../assets/table.svg');
   }
   .Collapsible-container
     > .Collapsible:nth-of-type(4)
     > .Collapsible__trigger::before {
-    background-image: url('/chart.svg');
+    background-image: url('../assets/chart.svg');
   }
   .Collapsible-container
     > .Collapsible:nth-of-type(5)
     > .Collapsible__trigger::before {
-    background-image: url('/map.svg');
+    background-image: url('../assets/map.svg');
   }
   .Collapsible-container
     > .Collapsible:nth-of-type(6)
     > .Collapsible__trigger::before {
-    background-image: url('/page.svg');
+    background-image: url('../assets/page.svg');
   }
   .Collapsible-container > .Collapsible > .Collapsible__trigger::after {
     content: '';
-    background-image: url('/arrow.svg');
+    background-image: url('../assets/arrow.svg');
     background-size: 0.5rem 0.5rem;
     width: 0.5rem;
     height: 0.5rem;

@@ -22,7 +22,7 @@ function* fetchChartBar() {
 
     const data = res.data.filter(dataFilter)
 
-    data.map( data => {
+    data.map(data => {
       covidData.push({
         estados: data.TwoLetterSymbol,
         ativos: data.active,
@@ -32,8 +32,6 @@ function* fetchChartBar() {
     })
 
     yield put(ChartBarActions.fetchChartBarSuccess(covidData))
-
-
   } catch (err) {
     yield put(ChartBarActions.fetchChartBarFailure(err.message))
   }

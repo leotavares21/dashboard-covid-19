@@ -41,6 +41,5 @@
     "prettier": "^2.2.1",
     "redux-devtools-extension": "^2.13.9"
   },
-  "author": "Leonardo Tavares",
   "license": "MIT"
 }
