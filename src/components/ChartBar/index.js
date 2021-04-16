@@ -104,10 +104,10 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
                 },
               },
             ],
+            itemTextColor: `${localStorage.theme === '1' ? '#fafafa' : '#000000'}`,
           },
         ]}
         theme={{
-          textColor: `${localStorage.theme === '1' ? '#fafafa' : '#333333'}`,
           axis: {
             fontSize: '14px',
             tickColor: `${localStorage.theme === '1' ? '#eee' : '#333333'}`,

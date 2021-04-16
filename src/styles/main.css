@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+
+@layer components {
+  .chart-container {
+    @apply h-screen z-0 max-h-72 py-2 px-2 bg-gray-50 dark:bg-gray-900 shadow-md rounded;
+  }
+  .chart-title {
+    @apply ml-2 text-pink-600 absolute z-10 font-semibold;
+  }
+}
+@tailwind utilities;
+
+.Collapsible-container > .Collapsible {
+  margin: 0.4rem 0;
+}
+.Collapsible-container > .Collapsible > .Collapsible__trigger {
+  display: block;
+  position: relative;
+  padding-left: 1.43rem;
+  cursor: pointer;
+}
+.Collapsible-container > .Collapsible > .Collapsible__trigger::before {
+  position: absolute;
+  display: block;
+  transition: transform 300ms;
+  content: '';
+  background-size: 0.8rem 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  stroke-width: 1px;
+}
+.Collapsible-container
+  > .Collapsible:nth-of-type(1)
+  > .Collapsible__trigger::before {
+  background-image: url('../assets/home.svg');
+}
+.Collapsible-container
+  > .Collapsible:nth-of-type(2)
+  > .Collapsible__trigger::before {
+  background-image: url('../assets/forms.svg');
+}
+.Collapsible-container
+  > .Collapsible:nth-of-type(3)
+  > .Collapsible__trigger::before {
+  background-image: url('../assets/table.svg');
+}
+.Collapsible-container
+  > .Collapsible:nth-of-type(4)
+  > .Collapsible__trigger::before {
+  background-image: url('../assets/chart.svg');
+}
+.Collapsible-container
+  > .Collapsible:nth-of-type(5)
+  > .Collapsible__trigger::before {
+  background-image: url('../assets/map.svg');
+}
+.Collapsible-container
+  > .Collapsible:nth-of-type(6)
+  > .Collapsible__trigger::before {
+  background-image: url('../assets/page.svg');
+}
+.Collapsible-container > .Collapsible > .Collapsible__trigger::after {
+  content: '';
+  background-image: url('../assets/arrow.svg');
+  background-size: 0.5rem 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  transition: transform 300ms;
+}
+.Collapsible-container > .Collapsible > .Collapsible__trigger:focus {
+  outline: none;
+}
+.Collapsible-container > .Collapsible > .Collapsible__trigger.is-open:after {
+  transform: rotateZ(180deg);
+}
+
+#range::-webkit-slider-thumb {
+  background-color: #fafafa;
+  width: 0.8rem;
+  height: 0.8rem;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#range::-moz-range-thumb {
+  background-color: #fafafa;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+}

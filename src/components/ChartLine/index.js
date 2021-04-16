@@ -16,7 +16,6 @@ const ChartLine = ({ theme, data, fetchChartLineRequest }) => {
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         xScale={{ type: 'point' }}
-        yFormat=" >-.2f"
         axisTop={null}
         axisRight={null}
         axisBottom={{
@@ -45,7 +44,6 @@ const ChartLine = ({ theme, data, fetchChartLineRequest }) => {
         pointLabelYOffset={-12}
         useMesh={true}
         theme={{
-          textColor: `${localStorage.theme === '1' ? '#fafafa' : '#333333'}`,
           axis: {
             fontSize: '14px',
             tickColor: `${localStorage.theme === '1' ? '#eee' : '#333333'}`,
@@ -83,6 +81,7 @@ const ChartLine = ({ theme, data, fetchChartLineRequest }) => {
             itemOpacity: 0.75,
             symbolSize: 12,
             symbolShape: 'circle',
+            itemTextColor: `${localStorage.theme === '1' ? '#fafafa' : '#000000'}`,
             effects: [
               {
                 on: 'hover',

@@ -51,7 +51,7 @@ const ChartChoropleth = ({ theme, data, fetchChartChoroplethRequest }) => {
             translateX: 20,
             translateY: -60,
             itemTextColor: `${
-              localStorage.theme === '1' ? '#fafafa' : '#333333'
+              localStorage.theme === '1' ? '#fafafa' : '#000000'
             }`,
             itemsSpacing: 0,
             itemWidth: 92,

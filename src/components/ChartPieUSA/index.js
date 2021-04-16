@@ -15,7 +15,7 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
       <ResponsivePie
         data={data}
         margin={{ top: 70, right: 80, bottom: 80, left: 80 }}
-        valueFormat=" > .3s"
+        tooltipFormat="> .3s"
         innerRadius={0.6}
         padAngle={2}
         cornerRadius={2}
@@ -32,7 +32,7 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
         sliceLabelsSkipAngle={10}
         sliceLabelsTextColor="#ffffff"
         theme={{
-          textColor: `${localStorage.theme === '1' ? '#cccccc' : '#555555'}`,
+          textColor: `${localStorage.theme === '1' ? '#fafafa' : '#000000'}`,
         }}
         defs={[
           {
@@ -96,6 +96,7 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
                 },
               },
             ],
+            itemTextColor: `${localStorage.theme === '1' ? '#eeeeee' : '#333333'}`,
           },
         ]}
       />

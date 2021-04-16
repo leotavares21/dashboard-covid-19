@@ -9,11 +9,11 @@
     "test": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
-    "@nivo/bar": "^0.67.0",
-    "@nivo/core": "^0.67.0",
-    "@nivo/geo": "^0.67.0",
-    "@nivo/line": "^0.67.0",
-    "@nivo/pie": "^0.67.0",
+    "@nivo/bar": "^0.61.0",
+    "@nivo/core": "^0.61.0",
+    "@nivo/geo": "^0.61.0",
+    "@nivo/line": "^0.61.0",
+    "@nivo/pie": "^0.61.0",
     "axios": "^0.21.1",
     "d3": "^6.6.1",
     "next": "10.0.9",

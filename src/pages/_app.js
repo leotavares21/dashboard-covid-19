@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import 'tailwindcss/tailwind.css'
-import '../styles/globals.css'
 import storeWrapper from '../store'
+import '../styles/main.css'
 
 const App = ({ Component, pageProps }) => {
-  const [ load, setLoad ] = useState(false)
+  const [load, setLoad] = useState(false)
 
   useEffect(() => {
     if (localStorage.theme && localStorage.theme === '1') {
@@ -16,17 +15,14 @@ const App = ({ Component, pageProps }) => {
     setLoad(true)
   }, [])
 
-  return (
-    load ?
+  return load ? (
     <>
       <Head>
         <title>World Health</title>
       </Head>
       <Component {...pageProps} />
     </>
-    :
-    null
-  )
+  ) : null
 }
 
 export default storeWrapper.withRedux(App)
