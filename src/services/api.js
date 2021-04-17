@@ -17,5 +17,3 @@ export const api2 = axios.create({
       'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com',
   },
 })
-
-

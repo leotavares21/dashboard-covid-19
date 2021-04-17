@@ -5,16 +5,16 @@ import { api2 } from '../../../services/api'
 
 function* getChartChoropleth() {
   try {
-    const resBR = yield call(api2.get, 'api/npm-covid-data/')
+    const res = yield call(api2.get, 'api/npm-covid-data/')
 
     const covidData = []
 
-    resBR.data.map(data => {
+    res.data.map(data => {
       if(data.ThreeLetterSymbol !== null || undefined){
         covidData.push(
           {
-            "id": data.ThreeLetterSymbol.toUpperCase(),
-            "value": data.TotCases_1M_Pop
+            id: data.ThreeLetterSymbol.toUpperCase(),
+            value: data.TotCases_1M_Pop
           },
         )
       }

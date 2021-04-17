@@ -9,26 +9,24 @@ function* fetchChartBar() {
 
     const covidData = []
 
-    function dataFilter(data) {
-      return (
-        data.province === 'Amazonas' ||
-        data.province === 'Sao Paulo' ||
-        data.province === 'Bahia' ||
-        data.province === 'Rio de Janeiro' ||
-        data.province === 'Parana' ||
-        data.province === 'Minas Gerais'
-      )
-    }
-
-    const data = res.data.filter(dataFilter)
-
-    data.map(data => {
-      covidData.push({
-        estados: data.TwoLetterSymbol,
-        ativos: data.active,
-        confirmados: data.confirmed,
-        curados: data.recovered,
-      })
+    res.data.reduce((allData, data) => {
+      switch (data.province) {
+        case 'Amazonas':
+        case 'Sao Paulo':
+        case 'Bahia':
+        case 'Rio de Janeiro':
+        case 'Parana':
+        case 'Minas Gerais':
+          covidData.push({
+            estados: data.TwoLetterSymbol,
+            ativos: data.active,
+            confirmados: data.confirmed,
+            curados: data.recovered,
+          })
+          break
+        default:
+          return
+      }
     })
 
     yield put(ChartBarActions.fetchChartBarSuccess(covidData))

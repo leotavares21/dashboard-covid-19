@@ -8,6 +8,7 @@ function* getChartPieBR() {
     const res = yield call(api1.get, 'statistics', {
       params: { country: 'brazil' },
     })
+
     const cases = res.data.response[0].cases
 
     const data = [
