@@ -6,10 +6,11 @@ export const fetchChartChoroplethRequest = () => {
   }
 }
 
-export const fetchChartChoroplethSuccess = data => {
+export const fetchChartChoroplethSuccess = (data, features) => {
   return {
     type: Types.FETCH_CHART_CHOROPLETH_SUCCESS,
     payload: data,
+    features
   }
 }
 

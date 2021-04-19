@@ -38,7 +38,9 @@ const SideBar = props => {
             : 'lg:opacity-1 transition duration-200 ease-out lg:delay-200 '
         } Collapsible-container border-t border-pink-700 px-3 pt-1`}
       >
-        <span className="text-pink-200 dark:text-pink-600 font-light">Main</span>
+        <span className="text-pink-200 dark:text-pink-600 font-light">
+          Main
+        </span>
         <Collapsible
           trigger="Dashboard"
           transitionTime="200"
@@ -83,7 +85,9 @@ const SideBar = props => {
           </ul>
         </Collapsible>
 
-        <span className="text-pink-200 dark:text-pink-600 font-light">Elements</span>
+        <span className="text-pink-200 dark:text-pink-600 font-light">
+          Elements
+        </span>
 
         <Collapsible trigger="Charts" transitionTime="200" easing="ease-in-out">
           <ul className="py-1" cy-selector="sideBarSubNav">

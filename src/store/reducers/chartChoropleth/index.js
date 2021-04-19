@@ -2,6 +2,7 @@ import * as Types from '../../actions/types'
 
 const initialState = {
   data: [],
+  features: [],
   error: '',
 }
 
@@ -16,6 +17,7 @@ const chartChoroplethReducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload,
+        features: action.features,
       }
     case Types.FETCH_CHART_CHOROPLETH_FAILURE:
       return {
