@@ -16,6 +16,7 @@ const ChartPieBR = ({ theme, data, fetchChartPieBRRequest }) => {
         data={data}
         margin={{ top: 70, right: 80, bottom: 80, left: 80 }}
         tooltipFormat="> .3s"
+        valueFormat="> .3s"
         innerRadius={0.6}
         padAngle={2}
         cornerRadius={2}
@@ -23,13 +24,11 @@ const ChartPieBR = ({ theme, data, fetchChartPieBRRequest }) => {
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [['darker', '0.8']] }}
         radialLabelsSkipAngle={10}
-        radialLabelsTextColor={
-          localStorage.theme === '1' ? '#fafafa' : '#333333'
-        }
         radialLabelsLinkDiagonalLength={12}
         radialLabelsLinkHorizontalLength={16}
         radialLabelsLinkColor={{ from: 'color', modifiers: [] }}
         sliceLabelsSkipAngle={10}
+        arcLabelsTextColor="#ffffff"
         theme={{
           textColor: `${localStorage.theme === '1' ? '#fafafa' : '#000000'}`,
         }}
@@ -96,7 +95,9 @@ const ChartPieBR = ({ theme, data, fetchChartPieBRRequest }) => {
                 },
               },
             ],
-            itemTextColor: `${localStorage.theme === '1' ? '#eeeeee' : '#000000'}`,
+            itemTextColor: `${
+              localStorage.theme === '1' ? '#eeeeee' : '#000000'
+            }`,
           },
         ]}
       />

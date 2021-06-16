@@ -16,6 +16,7 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
         data={data}
         margin={{ top: 70, right: 80, bottom: 80, left: 80 }}
         tooltipFormat="> .3s"
+        valueFormat="> .3s"
         innerRadius={0.6}
         padAngle={2}
         cornerRadius={2}
@@ -30,7 +31,7 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
         radialLabelsLinkHorizontalLength={16}
         radialLabelsLinkColor={{ from: 'color', modifiers: [] }}
         sliceLabelsSkipAngle={10}
-        sliceLabelsTextColor="#ffffff"
+        arcLabelsTextColor="#ffffff"
         theme={{
           textColor: `${localStorage.theme === '1' ? '#fafafa' : '#000000'}`,
         }}
@@ -96,7 +97,9 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
                 },
               },
             ],
-            itemTextColor: `${localStorage.theme === '1' ? '#eeeeee' : '#333333'}`,
+            itemTextColor: `${
+              localStorage.theme === '1' ? '#eeeeee' : '#333333'
+            }`,
           },
         ]}
       />
