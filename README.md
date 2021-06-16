@@ -2,7 +2,7 @@
 
 > Status: Complete ✔️
 
-### The dashboard shows datas about the COVID-19 in Brazil and world.
+### The dashboard shows data about the COVID-19 in Brazil and world.
 
 ![Screenshot 2021-06-16 at 16-36-54 World Health](https://user-images.githubusercontent.com/49364517/122282861-46b24e80-cec2-11eb-847e-1b81e72762f6.jpg)
 
