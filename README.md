@@ -16,7 +16,7 @@
 
 - The data used in the app is real.
 
-## Some technologies used in the project.
+## Some technologies used
 
 - Tailwindcss
 
