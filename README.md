@@ -4,9 +4,10 @@
 
 ### The dashboard shows data about the COVID-19 in Brazil and world.
 
-![Screenshot 2021-06-16 at 16-36-54 World Health](https://user-images.githubusercontent.com/49364517/122282861-46b24e80-cec2-11eb-847e-1b81e72762f6.jpg)
+![image](https://user-images.githubusercontent.com/49364517/122656058-cc860200-d12d-11eb-8ee2-e77ff51892c2.png)
 
-![Screenshot 2021-06-16 at 16-37-09 World Health](https://user-images.githubusercontent.com/49364517/122283036-80835500-cec2-11eb-9236-dcaac4b9183a.jpg)
+![image](https://user-images.githubusercontent.com/49364517/122656025-93e62880-d12d-11eb-8d9a-aa4aa0a75b7d.png)
+
 
 ## Project features
 
