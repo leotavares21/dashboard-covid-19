@@ -14,7 +14,7 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
       <h2 className="chart-title">Dados de COVID-19 por estados brasileiros</h2>
       <ResponsiveBar
         data={data}
-        keys={['ativos', 'confirmados', 'curados']}
+        keys={['ativos', 'confirmados', 'recuperados']}
         indexBy="estados"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
@@ -44,7 +44,7 @@ const ChartBar = ({ theme, data, fetchChartBarRequest }) => {
         fill={[
           {
             match: {
-              id: 'curados',
+              id: 'recuperados',
             },
             id: 'lines',
           },

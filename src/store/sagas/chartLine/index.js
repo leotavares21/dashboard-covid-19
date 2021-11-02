@@ -29,7 +29,7 @@ function* getChartLine() {
     resMEX.data.reduce((allData, data, i) => {
       if (i < 15) {
         covidData[0].data.unshift({
-          x: data.date.slice(-5),
+          x: data.date,
           y: data.new_deaths,
         })
       }
@@ -38,7 +38,7 @@ function* getChartLine() {
     resUSA.data.reduce((allData, data, i) => {
       if (i < 15) {
         covidData[1].data.unshift({
-          x: data.date.slice(-5),
+          x: data.date,
           y: data.new_deaths,
         })
       }
@@ -47,7 +47,7 @@ function* getChartLine() {
     resBR.data.reduce((allData, data, i) => {
       if (i < 15) {
         covidData[2].data.unshift({
-          x: data.date.slice(-5),
+          x: data.date,
           y: data.new_deaths,
         })
       }

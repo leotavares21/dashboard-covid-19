@@ -64,7 +64,7 @@ const ChartPieUSA = ({ theme, data, fetchChartPieUSARequest }) => {
           },
           {
             match: {
-              id: 'curados',
+              id: 'recuperados',
             },
             id: 'dots',
           },

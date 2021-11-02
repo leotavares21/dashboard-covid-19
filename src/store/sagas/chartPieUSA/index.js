@@ -17,8 +17,8 @@ function* getChartPieUSA() {
         value: cases.active,
       },
       {
-        id: 'curados',
-        label: 'curados',
+        id: 'recuperados',
+        label: 'recuperados',
         value: cases.recovered,
       },
       {

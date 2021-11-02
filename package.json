@@ -15,6 +15,7 @@
     "@nivo/line": "^0.70.1",
     "@nivo/pie": "^0.70.1",
     "axios": "^0.21.1",
+    "caniuse-lite": "^1.0.30001274",
     "d3": "^6.6.1",
     "next": "10.0.9",
     "next-compose-plugins": "^2.2.1",

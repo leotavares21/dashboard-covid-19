@@ -235,7 +235,7 @@ const ChartChoropleth = ({ theme, datas, fetchChartChoroplethRequest }) => {
         features={datas.features}
         margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
         colors="PuRd"
-        domain={[0, 100000]}
+        domain={[0, 130000]}
         unknownColor="#a3a3a3"
         label="properties.name"
         valueFormat=".2s"

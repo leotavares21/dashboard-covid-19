@@ -21,7 +21,7 @@ function* fetchChartBar() {
             estados: data.TwoLetterSymbol,
             ativos: data.active,
             confirmados: data.confirmed,
-            curados: data.recovered,
+            recuperados: data.recovered,
           })
           break
         default:
